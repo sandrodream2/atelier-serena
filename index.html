@@ -809,6 +809,105 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 }
 
 /* ============================================
+   RECENSIONI
+   ============================================ */
+.reviews{ background:var(--ivory); }
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(2rem,4vw,3.5rem);
+}
+.review{
+  background:var(--ivory-2);
+  border:1px solid var(--line);
+  padding:2.6rem 2.2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.4rem;
+}
+.review-stars{
+  font-family:var(--serif);
+  font-size:.95rem;
+  letter-spacing:.35em;
+  color:var(--gold);
+}
+.review blockquote{
+  font-family:var(--serif);
+  font-weight:300;
+  font-style:italic;
+  font-size:1.12rem;
+  line-height:1.65;
+  color:var(--charcoal-2);
+}
+.review-meta{ margin-top:auto; }
+.review-meta .name{
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  font-weight:400;
+  color:var(--charcoal);
+}
+.review-meta .when{
+  display:block;
+  font-size:.6rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--taupe);
+  margin-top:.45rem;
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq{ background:var(--ivory-2); }
+.faq-list{ max-width:820px; }
+.faq-item{
+  border-bottom:1px solid var(--line);
+}
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1.5rem;
+  padding:1.6rem 0;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:1.18rem;
+  color:var(--charcoal);
+  transition:color .4s var(--ease);
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary:hover{ color:var(--taupe); }
+.faq-item summary .faq-icon{
+  flex-shrink:0;
+  width:11px; height:11px;
+  position:relative;
+}
+.faq-item summary .faq-icon::before,
+.faq-item summary .faq-icon::after{
+  content:'';
+  position:absolute;
+  background:var(--gold);
+  transition:transform .5s var(--ease);
+}
+.faq-item summary .faq-icon::before{
+  top:5px; left:0; width:100%; height:1px;
+}
+.faq-item summary .faq-icon::after{
+  left:5px; top:0; width:1px; height:100%;
+}
+.faq-item[open] summary .faq-icon::after{ transform:scaleY(0); }
+.faq-item[open] summary{ color:var(--taupe); }
+.faq-answer{
+  padding:0 3rem 1.7rem 0;
+  font-size:.9rem;
+  line-height:1.9;
+  color:var(--charcoal-2);
+}
+
+/* ============================================
    CONTATTI
    ============================================ */
 .contact{ background:var(--ivory); }
@@ -1064,6 +1163,7 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   .pillars{ grid-template-columns:1fr; gap:2.2rem; }
   .values-grid{ grid-template-columns:1fr; gap:2rem; }
   .spaces-grid{ grid-template-columns:1fr; gap:2rem; }
+  .reviews-grid{ grid-template-columns:1fr; gap:1.6rem; }
   .footer-top{ grid-template-columns:1fr 1fr; gap:2.5rem; }
 }
 
@@ -1125,6 +1225,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     <li><a href="#trattamenti">Trattamenti</a></li>
     <li><a href="#approccio">Approccio</a></li>
     <li><a href="#ambiente">Ambiente</a></li>
+    <li><a href="#recensioni">Recensioni</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
 
@@ -1141,6 +1243,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <a href="#trattamenti">Trattamenti</a>
   <a href="#approccio">Approccio</a>
   <a href="#ambiente">Ambiente</a>
+  <a href="#recensioni">Recensioni</a>
+  <a href="#faq">FAQ</a>
   <a href="#contatti">Contatti</a>
   <a href="#prenota" class="mm-cta">Prenota ora</a>
 </div>
@@ -1624,10 +1728,146 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <cite class="reveal">— Atelier Serena</cite>
 </section>
 
+<!-- ================= RECENSIONI ================= -->
+<section class="section reviews" id="recensioni">
+  <div class="section-head reveal">
+    <span class="label">05 — Le Recensioni</span>
+    <h2 class="display">Storie di chi si è<br>preso <em>cura di sé</em></h2>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review reveal">
+      <span class="review-stars">★★★★★</span>
+      <blockquote>
+        “Un luogo rarefatto e silenzioso, dove la fretta non esiste. La
+        consulenza è stata un ascolto vero e dopo tre sedute la mia pelle
+        è letteralmente cambiata.”
+      </blockquote>
+      <div class="review-meta">
+        <span class="name">Giulia M.</span>
+        <span class="when">Trattamento viso · Marzo 2025</span>
+      </div>
+    </div>
+
+    <div class="review reveal">
+      <span class="review-stars">★★★★★</span>
+      <blockquote>
+        “Il massaggio decontratturante è stato il migliore che io abbia mai
+        provato a Milano. Pressione perfetta, ambiente caldo, zero
+        interruzioni. Esco sempre rigenerata.”
+      </blockquote>
+      <div class="review-meta">
+        <span class="name">Chiara B.</span>
+        <span class="when">Massaggio · Gennaio 2025</span>
+      </div>
+    </div>
+
+    <div class="review reveal">
+      <span class="review-stars">★★★★★</span>
+      <blockquote>
+        “Apprezzo la trasparenza: ogni prodotto spiegato, ogni passo
+        motivato. L'epilazione è delicatissima anche sulla mia pelle
+        molto reattiva. Non cambierei atelier per nulla al mondo.”
+      </blockquote>
+      <div class="review-meta">
+        <span class="name">Martina R.</span>
+        <span class="when">Epilazione · Maggio 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section faq" id="faq">
+  <div class="section-head reveal">
+    <span class="label">06 — Domande Frequenti</span>
+    <h2 class="display">Prima di <em>chiamarci</em></h2>
+  </div>
+
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>
+        Come avviene la prima visita?
+        <span class="faq-icon"></span>
+      </summary>
+      <p class="faq-answer">
+        La prima consulenza dura circa trenta minuti ed è gratuita e senza
+        impegno. Analizziamo insieme la pelle, le abitudini e le aspettative,
+        e definiamo un percorso realistico. Solo dopo il tuo consenso
+        procediamo con il primo trattamento.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        Devo arrivare in anticipo per l'appuntamento?
+        <span class="faq-icon"></span>
+      </summary>
+      <p class="faq-answer">
+        Ti consigliamo di arrivare cinque-dieci minuti prima per accoglierti
+        con calma, sederti in reception e scegliere un tè o un infuso. Non
+        c'è nessuna sala d'attesa affollata: ogni appuntamento è senza
+        sovrapposizioni, quindi il tuo tempo inizia puntuale.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        Con che frequenza è consigliabile ripetere i trattamenti?
+        <span class="faq-icon"></span>
+      </summary>
+      <p class="faq-answer">
+        Dipende dal trattamento: i percorsi viso sono più efficaci in cicli
+        di 4-6 sedute con cadenza settimanale o bisettimanale, i trattamenti
+        corpo in cicli di quattro sedute, mentre un massaggio può essere
+        un appuntamento singolo o un rituale mensile di mantenimento.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        I prodotti utilizzati sono adatti a pelli sensibili?
+        <span class="faq-icon"></span>
+      </summary>
+      <p class="faq-answer">
+        Sì. Selezioniamo formulazioni tracciabili, prive di sostanze
+        aggressive e testate con rigore. Per le pelli particolarmente
+        reattive utilizziamo linee specifiche e facciamo sempre un test di
+        tollerabilità prima del trattamento.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        Come si cancella o sposta un appuntamento?
+        <span class="faq-icon"></span>
+      </summary>
+      <p class="faq-answer">
+        Basta chiamarci o scriverci almeno 24 ore prima: sposteremo
+        l'appuntamento senza costi. Ti chiediamo cortesemente di rispettare
+        questo termine, perché ogni fascia oraria è dedicata a una sola
+        persona.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        È possibile regalare un trattamento?
+        <span class="faq-icon"></span>
+      </summary>
+      <p class="faq-answer">
+        Certamente. Puoi regalare un trattamento singolo o un buono aperto di
+        importo a scelta, valido dodici mesi. Contattaci e prepareremo un
+        biglietto scritto a mano, pronto da consegnare.
+      </p>
+    </details>
+  </div>
+</section>
+
 <!-- ================= CONTATTI ================= -->
 <section class="section contact" id="contatti">
   <div class="section-head reveal">
-    <span class="label">05 — Contatti</span>
+    <span class="label">07 — Contatti</span>
     <h2 class="display">Scrivici, ti<br>risponderemo <em>presto</em></h2>
   </div>
 
@@ -1708,7 +1948,7 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= PRENOTA ================= -->
 <section class="booking" id="prenota">
   <div class="booking-head reveal">
-    <span class="label">06 — Prenotazione</span>
+    <span class="label">08 — Prenotazione</span>
     <h2 class="display">Il tuo momento<br>inizia <em>qui</em></h2>
     <p>
       Prenotare è semplice. Scegli il trattamento, indica la fascia oraria
@@ -1775,6 +2015,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <li><a href="#trattamenti">Trattamenti</a></li>
         <li><a href="#approccio">Approccio</a></li>
         <li><a href="#ambiente">Ambiente</a></li>
+        <li><a href="#recensioni">Recensioni</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#prenota">Prenota</a></li>
       </ul>
     </div>
@@ -1898,7 +2140,7 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   /* ==========================================
      ACTIVE LINK HIGHLIGHT
      ========================================== */
-  var sections = ['filosofia','trattamenti','approccio','ambiente','contatti'];
+  var sections = ['filosofia','trattamenti','approccio','ambiente','recensioni','faq','contatti'];
   var sectionEls = sections
     .map(function(id){ return document.getElementById(id); })
     .filter(Boolean);
