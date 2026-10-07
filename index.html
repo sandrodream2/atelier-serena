@@ -272,6 +272,31 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 }
 
 /* ============================================
+   LANG SWITCH
+   ============================================ */
+.lang-switch{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:.64rem;
+  letter-spacing:.16em;
+  font-weight:400;
+  text-transform:uppercase;
+  color:rgba(250,247,242,.85);
+  flex-shrink:0;
+}
+.lang-switch button{
+  padding:2px 1px;
+  color:inherit;
+  opacity:.5;
+  transition:opacity .45s var(--ease);
+}
+.lang-switch button:hover{ opacity:.85; }
+.lang-switch button.active{ opacity:1; text-decoration:underline; text-underline-offset:4px; }
+.lang-switch .sep{ opacity:.35; }
+.nav.scrolled .lang-switch{ color:var(--charcoal-2); }
+
+/* ============================================
    HERO
    ============================================ */
 .hero{
@@ -1217,36 +1242,42 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <nav class="nav" id="nav">
   <a href="#top" class="brand">
     <span class="brand-name">Atelier Serena</span>
-    <span class="brand-sub">Estetica · Benessere</span>
+    <span class="brand-sub" data-i18n="brand.sub">Estetica · Benessere</span>
   </a>
 
   <ul class="nav-links" id="navLinks">
-    <li><a href="#filosofia">Filosofia</a></li>
-    <li><a href="#trattamenti">Trattamenti</a></li>
-    <li><a href="#approccio">Approccio</a></li>
-    <li><a href="#ambiente">Ambiente</a></li>
-    <li><a href="#recensioni">Recensioni</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#filosofia" data-i18n="nav.filosofia">Filosofia</a></li>
+    <li><a href="#trattamenti" data-i18n="nav.trattamenti">Trattamenti</a></li>
+    <li><a href="#approccio" data-i18n="nav.approccio">Approccio</a></li>
+    <li><a href="#ambiente" data-i18n="nav.ambiente">Ambiente</a></li>
+    <li><a href="#recensioni" data-i18n="nav.recensioni">Recensioni</a></li>
+    <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="#contatti" data-i18n="nav.contatti">Contatti</a></li>
   </ul>
 
-  <a href="#prenota" class="nav-cta">Prenota</a>
+  <a href="#prenota" class="nav-cta" data-i18n="nav.prenota">Prenota</a>
 
-  <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
+  <div class="lang-switch" id="langSwitch" aria-label="Lingua / Language">
+    <button type="button" data-lang="it" class="active">IT</button>
+    <span class="sep">/</span>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+
+  <button class="burger" id="burger" aria-label="Apri menu" data-i18n-aria="burger.aria" aria-expanded="false">
     <span></span><span></span>
   </button>
 </nav>
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#filosofia">Filosofia</a>
-  <a href="#trattamenti">Trattamenti</a>
-  <a href="#approccio">Approccio</a>
-  <a href="#ambiente">Ambiente</a>
-  <a href="#recensioni">Recensioni</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contatti">Contatti</a>
-  <a href="#prenota" class="mm-cta">Prenota ora</a>
+  <a href="#filosofia" data-i18n="nav.filosofia">Filosofia</a>
+  <a href="#trattamenti" data-i18n="nav.trattamenti">Trattamenti</a>
+  <a href="#approccio" data-i18n="nav.approccio">Approccio</a>
+  <a href="#ambiente" data-i18n="nav.ambiente">Ambiente</a>
+  <a href="#recensioni" data-i18n="nav.recensioni">Recensioni</a>
+  <a href="#faq" data-i18n="nav.faq">FAQ</a>
+  <a href="#contatti" data-i18n="nav.contatti">Contatti</a>
+  <a href="#prenota" class="mm-cta" data-i18n="nav.prenotaOra">Prenota ora</a>
 </div>
 
 <!-- ================= HERO ================= -->
@@ -1257,22 +1288,22 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <div class="hero-overlay"></div>
 
   <div class="hero-inner">
-    <span class="label hero-label">Dal 2009 — Milano</span>
-    <h1>La cura di sé<br>come <em>forma d'arte</em></h1>
-    <p class="hero-sub">
+    <span class="label hero-label" data-i18n="hero.label">Dal 2009 — Milano</span>
+    <h1 data-i18n="hero.title">La cura di sé<br>come <em>forma d'arte</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">
       Un luogo dove il tempo rallenta. Trattamenti su misura, gesti lenti e
       un'attenzione autentica alla persona, per ritrovare l'equilibrio tra
       corpo, pelle e mente.
     </p>
 
     <div class="hero-actions">
-      <a href="#trattamenti" class="btn-primary">Scopri i trattamenti</a>
-      <a href="#filosofia" class="btn-ghost">La nostra filosofia</a>
+      <a href="#trattamenti" class="btn-primary" data-i18n="hero.cta1">Scopri i trattamenti</a>
+      <a href="#filosofia" class="btn-ghost" data-i18n="hero.cta2">La nostra filosofia</a>
     </div>
   </div>
 
   <div class="hero-scroll">
-    <span>Scorri</span>
+    <span data-i18n="hero.scroll">Scorri</span>
     <div class="scroll-track"></div>
   </div>
 </header>
@@ -1280,8 +1311,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= STATEMENT ================= -->
 <section class="statement">
   <div class="reveal">
-    <p class="quote">Il tempo che dedichi a te stesso<br>non è mai <em>tempo sottratto</em>.</p>
-    <p class="lead">
+    <p class="quote" data-i18n="statement.quote">Il tempo che dedichi a te stesso<br>non è mai <em>tempo sottratto</em>.</p>
+    <p class="lead" data-i18n="statement.lead">
       Crediamo in una bellezza che non si impone, ma si rivela. Ogni trattamento
       nasce dall'ascolto, dal rispetto dei ritmi naturali della pelle e dalla
       convinzione che il vero benessere sia una pratica quotidiana, non un'eccezione.
@@ -1292,8 +1323,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= FILOSOFIA ================= -->
 <section class="section" id="filosofia">
   <div class="section-head reveal">
-    <span class="label">01 — La Filosofia</span>
-    <h2 class="display">Un'idea di bellezza<br>che nasce dal <em>benessere</em></h2>
+    <span class="label" data-i18n="s.filosofia.label">01 — La Filosofia</span>
+    <h2 class="display" data-i18n="s.filosofia.title">Un'idea di bellezza<br>che nasce dal <em>benessere</em></h2>
   </div>
 
   <div class="philosophy">
@@ -1302,21 +1333,21 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     </div>
 
     <div class="philosophy-text reveal">
-      <span class="label">Il nostro pensiero</span>
-      <h3 class="display">Ascoltare prima<br>di <em>agire</em></h3>
-      <p class="lead">
+      <span class="label" data-i18n="filo.label">Il nostro pensiero</span>
+      <h3 class="display" data-i18n="filo.title">Ascoltare prima<br>di <em>agire</em></h3>
+      <p class="lead" data-i18n="filo.p1">
         Atelier Serena nasce da un pensiero semplice: la pelle è una storia da
         leggere con delicatezza. Non esistono formule identiche per tutti,
         perché ogni persona porta con sé un ritmo, una sensibilità, un momento di vita.
       </p>
-      <p class="lead">
+      <p class="lead" data-i18n="filo.p2">
         Per questo lavoriamo con protocolli personalizzati, prodotti selezionati
         per la loro purezza e mani formate per ascoltare prima di agire.
       </p>
 
       <p class="signature">
         Serena Vitale
-        <small>Fondatrice & Direttrice Tecnica</small>
+        <small data-i18n="filo.sig.small">Fondatrice & Direttrice Tecnica</small>
       </p>
     </div>
   </div>
@@ -1324,17 +1355,17 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <!-- Sotto-sezione: Storia -->
   <div class="sub-block reveal" id="storia">
     <div>
-      <span class="label">01.1 — La Storia</span>
+      <span class="label" data-i18n="storia.label">01.1 — La Storia</span>
     </div>
     <div>
-      <h3 class="display">Quindici anni di <em>gesti lenti</em></h3>
-      <p class="lead">
+      <h3 class="display" data-i18n="storia.title">Quindici anni di <em>gesti lenti</em></h3>
+      <p class="lead" data-i18n="storia.p1">
         Nel 2009 Serena Vitale apre un piccolo studio in una corte milanese,
         con una sola cabina e l'idea di offrire trattamenti senza fretta. Negli
         anni l'atelier cresce, ma il metodo resta lo stesso: tempi distesi,
         un cliente alla volta, nessuna sovrapposizione di appuntamenti.
       </p>
-      <p class="lead">
+      <p class="lead" data-i18n="storia.p2">
         Oggi Atelier Serena occupa tre ambienti in Via della Spiga e accoglie
         ogni giorno un numero limitato di persone. Una scelta deliberata, che
         permette di dedicare a ciascuna il tempo che merita.
@@ -1345,14 +1376,14 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <!-- Sotto-sezione: Valori -->
   <div class="values" id="valori">
     <div class="values-head reveal">
-      <span class="label">01.2 — I Valori</span>
+      <span class="label" data-i18n="valori.label">01.2 — I Valori</span>
     </div>
 
     <div class="values-grid">
       <div class="value reveal">
         <span class="value-num">I</span>
-        <h4>Rispetto</h4>
-        <p>
+        <h4 data-i18n="valori.1.h">Rispetto</h4>
+        <p data-i18n="valori.1.p">
           Nessun protocollo viene imposto. Ogni percorso nasce da una
           conversazione e si adatta alla pelle, ai tempi e alle aspettative
           della persona che abbiamo davanti.
@@ -1361,8 +1392,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
       <div class="value reveal">
         <span class="value-num">II</span>
-        <h4>Trasparenza</h4>
-        <p>
+        <h4 data-i18n="valori.2.h">Trasparenza</h4>
+        <p data-i18n="valori.2.p">
           Conosciamo e dichiariamo ogni ingrediente che utilizziamo.
           Selezioniamo formulazioni tracciabili, prive di sostanze
           aggressive e testate con rigore.
@@ -1371,8 +1402,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
       <div class="value reveal">
         <span class="value-num">III</span>
-        <h4>Sostenibilità</h4>
-        <p>
+        <h4 data-i18n="valori.3.h">Sostenibilità</h4>
+        <p data-i18n="valori.3.p">
           Meno sprechi, più attenzione. Lavoriamo con prodotti sfusi ove
           possibile, riduciamo gli imballaggi e scegliamo fornitori che
           condividono la nostra idea di cura.
@@ -1385,16 +1416,16 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= TRATTAMENTI ================= -->
 <section class="section treatments" id="trattamenti">
   <div class="section-head reveal">
-    <span class="label">02 — I Trattamenti</span>
-    <h2 class="display">Rituali <em>su misura</em></h2>
+    <span class="label" data-i18n="s.trattamenti.label">02 — I Trattamenti</span>
+    <h2 class="display" data-i18n="s.trattamenti.title">Rituali <em>su misura</em></h2>
   </div>
 
   <!-- Tabs -->
   <div class="tabs reveal" role="tablist">
-    <button class="tab active" role="tab" data-tab="viso">Viso</button>
-    <button class="tab" role="tab" data-tab="corpo">Corpo</button>
-    <button class="tab" role="tab" data-tab="massaggi">Massaggi</button>
-    <button class="tab" role="tab" data-tab="epilazione">Epilazione</button>
+    <button class="tab active" role="tab" data-tab="viso" data-i18n="tab.viso">Viso</button>
+    <button class="tab" role="tab" data-tab="corpo" data-i18n="tab.corpo">Corpo</button>
+    <button class="tab" role="tab" data-tab="massaggi" data-i18n="tab.massaggi">Massaggi</button>
+    <button class="tab" role="tab" data-tab="epilazione" data-i18n="tab.epilazione">Epilazione</button>
   </div>
 
   <!-- Panel: Viso -->
@@ -1404,25 +1435,25 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1400&auto=format&fit=crop" alt="Trattamento viso professionale">
       </div>
       <div class="panel-body reveal">
-        <span class="label">02.1 — Viso</span>
-        <h3 class="display">Luminosità che<br>si <em>costruisce</em></h3>
-        <p class="lead">
+        <span class="label" data-i18n="viso.label">02.1 — Viso</span>
+        <h3 class="display" data-i18n="viso.title">Luminosità che<br>si <em>costruisce</em></h3>
+        <p class="lead" data-i18n="viso.p1">
           Ogni percorso viso inizia con un'analisi della pelle sotto luce
           naturale: idratazione, elasticità, pori, pigmentazioni. Da qui
           costruiamo un protocollo che rispetta la barriera cutanea e i suoi
           tempi di recupero.
         </p>
-        <p class="lead">
+        <p class="lead" data-i18n="viso.p2">
           Utilizziamo cosmetici a base di acido ialuronico a basso peso
           molecolare, niacinamide, vitamine e attivi vegetali lenitivi.
           Nessun trattamento aggressivo, nessuna promessa impossibile.
         </p>
 
         <ul class="panel-list">
-          <li><span class="name">Pulizia profonda essenziale · 60 min</span><span class="price">€85</span></li>
-          <li><span class="name">Idratazione intensiva · 75 min</span><span class="price">€105</span></li>
-          <li><span class="name">Protocollo anti-age progressivo · 90 min</span><span class="price">€140</span></li>
-          <li><span class="name">Trattamento illuminante pre-evento · 50 min</span><span class="price">€95</span></li>
+          <li><span class="name" data-i18n="viso.1">Pulizia profonda essenziale · 60 min</span><span class="price">€85</span></li>
+          <li><span class="name" data-i18n="viso.2">Idratazione intensiva · 75 min</span><span class="price">€105</span></li>
+          <li><span class="name" data-i18n="viso.3">Protocollo anti-age progressivo · 90 min</span><span class="price">€140</span></li>
+          <li><span class="name" data-i18n="viso.4">Trattamento illuminante pre-evento · 50 min</span><span class="price">€95</span></li>
         </ul>
       </div>
     </div>
@@ -1435,23 +1466,23 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=1400&auto=format&fit=crop" alt="Trattamento corpo con scrub">
       </div>
       <div class="panel-body reveal">
-        <span class="label">02.2 — Corpo</span>
-        <h3 class="display">Leggerezza<br>e <em>tono</em></h3>
-        <p class="lead">
+        <span class="label" data-i18n="corpo.label">02.2 — Corpo</span>
+        <h3 class="display" data-i18n="corpo.title">Leggerezza<br>e <em>tono</em></h3>
+        <p class="lead" data-i18n="corpo.p1">
           Scrub, fanghi e trattamenti drenanti pensati per restituire alla
           pelle del corpo la stessa cura che riserviamo al viso. Texture
           avvolgenti, temperature calibrate, manualità lente e profonde.
         </p>
-        <p class="lead">
+        <p class="lead" data-i18n="corpo.p2">
           Consigliati in cicli di quattro sedute per un risultato visibile e
           duraturo, con cadenza settimanale o bisettimanale.
         </p>
 
         <ul class="panel-list">
-          <li><span class="name">Scrub corpo agli agrumi · 45 min</span><span class="price">€75</span></li>
-          <li><span class="name">Fango drenante gambe e glutei · 60 min</span><span class="price">€110</span></li>
-          <li><span class="name">Trattamento tonificante completo · 80 min</span><span class="price">€135</span></li>
-          <li><span class="name">Rituale corpo completo (scrub + fango + idratazione) · 110 min</span><span class="price">€180</span></li>
+          <li><span class="name" data-i18n="corpo.1">Scrub corpo agli agrumi · 45 min</span><span class="price">€75</span></li>
+          <li><span class="name" data-i18n="corpo.2">Fango drenante gambe e glutei · 60 min</span><span class="price">€110</span></li>
+          <li><span class="name" data-i18n="corpo.3">Trattamento tonificante completo · 80 min</span><span class="price">€135</span></li>
+          <li><span class="name" data-i18n="corpo.4">Rituale corpo completo (scrub + fango + idratazione) · 110 min</span><span class="price">€180</span></li>
         </ul>
       </div>
     </div>
@@ -1464,25 +1495,25 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1400&auto=format&fit=crop" alt="Massaggio rilassante">
       </div>
       <div class="panel-body reveal">
-        <span class="label">02.3 — Massaggi</span>
-        <h3 class="display">Sciogliere<br>la <em>tensione</em></h3>
-        <p class="lead">
+        <span class="label" data-i18n="massaggi.label">02.3 — Massaggi</span>
+        <h3 class="display" data-i18n="massaggi.title">Sciogliere<br>la <em>tensione</em></h3>
+        <p class="lead" data-i18n="massaggi.p1">
           Dal rilassante al decontratturante, ogni massaggio è calibrato sulla
           pressione desiderata. Il nostro approccio combina manualità classiche
           e tecniche miofasciali, per sciogliere nodi profondi senza mai
           risultare invasivo.
         </p>
-        <p class="lead">
+        <p class="lead" data-i18n="massaggi.p2">
           L'ambiente è silenzioso, con luce attenuata e oli caldi. Il tempo
           del massaggio è interamente dedicato a te: nessuna interruzione,
           nessuna fretta.
         </p>
 
         <ul class="panel-list">
-          <li><span class="name">Massaggio rilassante · 50 min</span><span class="price">€75</span></li>
-          <li><span class="name">Massaggio decontratturante schiena e collo · 50 min</span><span class="price">€85</span></li>
-          <li><span class="name">Massaggio drenante gambe · 45 min</span><span class="price">€80</span></li>
-          <li><span class="name">Massaggio completo corpo · 80 min</span><span class="price">€125</span></li>
+          <li><span class="name" data-i18n="massaggi.1">Massaggio rilassante · 50 min</span><span class="price">€75</span></li>
+          <li><span class="name" data-i18n="massaggi.2">Massaggio decontratturante schiena e collo · 50 min</span><span class="price">€85</span></li>
+          <li><span class="name" data-i18n="massaggi.3">Massaggio drenante gambe · 45 min</span><span class="price">€80</span></li>
+          <li><span class="name" data-i18n="massaggi.4">Massaggio completo corpo · 80 min</span><span class="price">€125</span></li>
         </ul>
       </div>
     </div>
@@ -1495,24 +1526,24 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1400&auto=format&fit=crop" alt="Prodotti per epilazione delicata">
       </div>
       <div class="panel-body reveal">
-        <span class="label">02.4 — Epilazione</span>
-        <h3 class="display">Delicatezza<br>anche sulla <em>pelle sensibile</em></h3>
-        <p class="lead">
+        <span class="label" data-i18n="epilazione.label">02.4 — Epilazione</span>
+        <h3 class="display" data-i18n="epilazione.title">Delicatezza<br>anche sulla <em>pelle sensibile</em></h3>
+        <p class="lead" data-i18n="epilazione.p1">
           Utilizziamo cere a basso punto di fusione e tecniche a strappo
           controllato, pensate per ridurre al minimo il disagio. Prima di
           ogni seduta applichiamo un lenitivo e, al termine, un olio
           calmante specifico.
         </p>
-        <p class="lead">
+        <p class="lead" data-i18n="epilazione.p2">
           Disponibili anche formule specifiche per zone delicate e per pelli
           particolarmente reattive.
         </p>
 
         <ul class="panel-list">
-          <li><span class="name">Sopracciglia o labbro superiore</span><span class="price">€18</span></li>
-          <li><span class="name">Ascelle o inguine parziale</span><span class="price">€22</span></li>
-          <li><span class="name">Mezza gamba</span><span class="price">€32</span></li>
-          <li><span class="name">Gamba intera</span><span class="price">€48</span></li>
+          <li><span class="name" data-i18n="epilazione.1">Sopracciglia o labbro superiore</span><span class="price">€18</span></li>
+          <li><span class="name" data-i18n="epilazione.2">Ascelle o inguine parziale</span><span class="price">€22</span></li>
+          <li><span class="name" data-i18n="epilazione.3">Mezza gamba</span><span class="price">€32</span></li>
+          <li><span class="name" data-i18n="epilazione.4">Gamba intera</span><span class="price">€48</span></li>
         </ul>
       </div>
     </div>
@@ -1526,9 +1557,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1000&auto=format&fit=crop" alt="Trattamento viso">
       </div>
       <div class="treat-body">
-        <h4>Viso</h4>
-        <p>Pulizia profonda, idratazione intensiva e protocolli anti-age costruiti sulla lettura della pelle.</p>
-        <span class="treat-meta">Da 60 min · da €85</span>
+        <h4 data-i18n="tg.1.h">Viso</h4>
+        <p data-i18n="tg.1.p">Pulizia profonda, idratazione intensiva e protocolli anti-age costruiti sulla lettura della pelle.</p>
+        <span class="treat-meta" data-i18n="tg.1.m">Da 60 min · da €85</span>
       </div>
     </a>
 
@@ -1538,9 +1569,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1000&auto=format&fit=crop" alt="Trattamento corpo">
       </div>
       <div class="treat-body">
-        <h4>Corpo</h4>
-        <p>Scrub, fanghi e trattamenti drenanti per restituire tono, leggerezza e luminosità alla pelle.</p>
-        <span class="treat-meta">Da 75 min · da €110</span>
+        <h4 data-i18n="tg.2.h">Corpo</h4>
+        <p data-i18n="tg.2.p">Scrub, fanghi e trattamenti drenanti per restituire tono, leggerezza e luminosità alla pelle.</p>
+        <span class="treat-meta" data-i18n="tg.2.m">Da 75 min · da €110</span>
       </div>
     </a>
 
@@ -1550,9 +1581,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop" alt="Massaggio rilassante">
       </div>
       <div class="treat-body">
-        <h4>Massaggi</h4>
-        <p>Dal rilassante al decontratturante, manualità lente e profonde per sciogliere tensione e stanchezza.</p>
-        <span class="treat-meta">Da 50 min · da €75</span>
+        <h4 data-i18n="tg.3.h">Massaggi</h4>
+        <p data-i18n="tg.3.p">Dal rilassante al decontratturante, manualità lente e profonde per sciogliere tensione e stanchezza.</p>
+        <span class="treat-meta" data-i18n="tg.3.m">Da 50 min · da €75</span>
       </div>
     </a>
 
@@ -1562,9 +1593,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
         <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop" alt="Prodotti di skincare">
       </div>
       <div class="treat-body">
-        <h4>Epilazione</h4>
-        <p>Cerette delicate e tecniche a basso impatto, pensate anche per le pelli più sensibili.</p>
-        <span class="treat-meta">Da 20 min · da €18</span>
+        <h4 data-i18n="tg.4.h">Epilazione</h4>
+        <p data-i18n="tg.4.p">Cerette delicate e tecniche a basso impatto, pensate anche per le pelli più sensibili.</p>
+        <span class="treat-meta" data-i18n="tg.4.m">Da 20 min · da €18</span>
       </div>
     </a>
   </div>
@@ -1573,15 +1604,15 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= APPROCCIO ================= -->
 <section class="section approach" id="approccio">
   <div class="section-head reveal">
-    <span class="label">03 — L'Approccio</span>
-    <h2 class="display">Tre gesti che<br>fanno la <em>differenza</em></h2>
+    <span class="label" data-i18n="s.approccio.label">03 — L'Approccio</span>
+    <h2 class="display" data-i18n="s.approccio.title">Tre gesti che<br>fanno la <em>differenza</em></h2>
   </div>
 
   <div class="pillars">
     <div class="pillar reveal">
       <span class="pillar-num">01</span>
-      <h3>Ascolto</h3>
-      <p>
+      <h3 data-i18n="pil.1.h">Ascolto</h3>
+      <p data-i18n="pil.1.p">
         Ogni percorso inizia con una consulenza dedicata. Analizziamo la pelle,
         le abitudini e le aspettative, per costruire insieme un programma realistico
         e rispettoso dei tuoi tempi.
@@ -1590,8 +1621,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
     <div class="pillar reveal">
       <span class="pillar-num">02</span>
-      <h3>Materia</h3>
-      <p>
+      <h3 data-i18n="pil.2.h">Materia</h3>
+      <p data-i18n="pil.2.p">
         Selezioniamo formulazioni cosmetiche con ingredienti tracciabili, privi di
         sostanze aggressive. Crediamo che ciò che applichiamo sulla pelle debba
         essere tanto efficace quanto gentile.
@@ -1600,8 +1631,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
     <div class="pillar reveal">
       <span class="pillar-num">03</span>
-      <h3>Continuità</h3>
-      <p>
+      <h3 data-i18n="pil.3.h">Continuità</h3>
+      <p data-i18n="pil.3.p">
         Il benessere è una pratica, non un evento. Ti accompagniamo nel tempo con
         piani di mantenimento e consigli quotidiani, perché i risultati durino
         oltre la porta dell'atelier.
@@ -1612,16 +1643,16 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <!-- Sotto-sezione: Metodo -->
   <div class="method" id="metodo">
     <div class="method-head reveal">
-      <span class="label">03.1 — Il Metodo</span>
-      <h3>Quattro passaggi,<br>nessuna scorciatoia</h3>
+      <span class="label" data-i18n="metodo.label">03.1 — Il Metodo</span>
+      <h3 data-i18n="metodo.title">Quattro passaggi,<br>nessuna scorciatoia</h3>
     </div>
 
     <div class="steps">
       <div class="step reveal">
         <span class="step-dot"></span>
-        <h5>Fase 01</h5>
-        <h4>Consulenza</h4>
-        <p>
+        <h5 data-i18n="step.1.h5">Fase 01</h5>
+        <h4 data-i18n="step.1.h">Consulenza</h4>
+        <p data-i18n="step.1.p">
           Trenta minuti di ascolto e analisi della pelle, senza impegno.
           Definiamo insieme obiettivi realistici e il numero di sedute necessario.
         </p>
@@ -1629,9 +1660,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
       <div class="step reveal">
         <span class="step-dot"></span>
-        <h5>Fase 02</h5>
-        <h4>Protocollo</h4>
-        <p>
+        <h5 data-i18n="step.2.h5">Fase 02</h5>
+        <h4 data-i18n="step.2.h">Protocollo</h4>
+        <p data-i18n="step.2.p">
           Costruiamo un piano personalizzato su misura, con prodotti e
           manualità scelti in base alla risposta della tua pelle.
         </p>
@@ -1639,9 +1670,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
       <div class="step reveal">
         <span class="step-dot"></span>
-        <h5>Fase 03</h5>
-        <h4>Trattamento</h4>
-        <p>
+        <h5 data-i18n="step.3.h5">Fase 03</h5>
+        <h4 data-i18n="step.3.h">Trattamento</h4>
+        <p data-i18n="step.3.p">
           Ogni seduta dura il tempo necessario, senza sovrapposizioni.
           Lavoriamo in un ambiente silenzioso, con luce e temperatura calibrate.
         </p>
@@ -1649,9 +1680,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
       <div class="step reveal">
         <span class="step-dot"></span>
-        <h5>Fase 04</h5>
-        <h4>Mantenimento</h4>
-        <p>
+        <h5 data-i18n="step.4.h5">Fase 04</h5>
+        <h4 data-i18n="step.4.h">Mantenimento</h4>
+        <p data-i18n="step.4.p">
           Al termine del ciclo ricevi indicazioni quotidiane e una cadenza di
           richiami per conservare i risultati nel tempo.
         </p>
@@ -1665,8 +1696,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <div class="env-hero">
     <img id="envImg" src="https://images.unsplash.com/photo-1583416750470-965b2707b355?q=80&w=2400&auto=format&fit=crop" alt="Sala trattamenti del centro estetico">
     <div class="env-hero-caption reveal">
-      <span class="label">04 — L'Ambiente</span>
-      <h2 class="display">Uno spazio che<br>respira <em>con te</em></h2>
+      <span class="label" data-i18n="s.ambiente.label">04 — L'Ambiente</span>
+      <h2 class="display" data-i18n="s.ambiente.title">Uno spazio che<br>respira <em>con te</em></h2>
     </div>
   </div>
 
@@ -1685,14 +1716,14 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <!-- Sotto-sezione: Gli spazi -->
   <div class="spaces" id="spazi">
     <div class="spaces-head reveal">
-      <span class="label">04.1 — Gli Spazi</span>
-      <h3>Tre ambienti, un'unica <em>atmosfera</em></h3>
+      <span class="label" data-i18n="spazi.label">04.1 — Gli Spazi</span>
+      <h3 data-i18n="spazi.title">Tre ambienti, un'unica <em>atmosfera</em></h3>
     </div>
 
     <div class="spaces-grid">
       <div class="space reveal">
-        <h4>La Reception</h4>
-        <p>
+        <h4 data-i18n="spazio.1.h">La Reception</h4>
+        <p data-i18n="spazio.1.p">
           Un ingresso caldo, con luce naturale e una selezione di tè e infusi.
           È il luogo dove si prende tempo prima di iniziare: nessuna fretta,
           nessuna sala d'attesa affollata.
@@ -1700,8 +1731,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
       </div>
 
       <div class="space reveal">
-        <h4>Le Cabine</h4>
-        <p>
+        <h4 data-i18n="spazio.2.h">Le Cabine</h4>
+        <p data-i18n="spazio.2.p">
           Due cabine insonorizzate, con lettini riscaldati, luce regolabile e
           diffusione di oli essenziali. Ogni cabina è dotata di un angolo
           privato per cambiarsi con calma.
@@ -1709,8 +1740,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
       </div>
 
       <div class="space reveal">
-        <h4>L'Angolo Relax</h4>
-        <p>
+        <h4 data-i18n="spazio.3.h">L'Angolo Relax</h4>
+        <p data-i18n="spazio.3.p">
           Al termine del trattamento, un piccolo spazio con poltrone, tisane e
           musica soffusa. Un invito a non alzarsi subito, a lasciar sedimentare
           la sensazione di benessere.
@@ -1722,7 +1753,7 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
 <!-- ================= QUOTE ================= -->
 <section class="quote-band">
-  <blockquote class="reveal">
+  <blockquote class="reveal" data-i18n="quote.text">
     “La bellezza autentica non si aggiunge:<br>si risveglia, con pazienza.”
   </blockquote>
   <cite class="reveal">— Atelier Serena</cite>
@@ -1731,47 +1762,47 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= RECENSIONI ================= -->
 <section class="section reviews" id="recensioni">
   <div class="section-head reveal">
-    <span class="label">05 — Le Recensioni</span>
-    <h2 class="display">Storie di chi si è<br>preso <em>cura di sé</em></h2>
+    <span class="label" data-i18n="s.recensioni.label">05 — Le Recensioni</span>
+    <h2 class="display" data-i18n="s.recensioni.title">Storie di chi si è<br>preso <em>cura di sé</em></h2>
   </div>
 
   <div class="reviews-grid">
     <div class="review reveal">
       <span class="review-stars">★★★★★</span>
-      <blockquote>
+      <blockquote data-i18n="rev.1.q">
         “Un luogo rarefatto e silenzioso, dove la fretta non esiste. La
         consulenza è stata un ascolto vero e dopo tre sedute la mia pelle
         è letteralmente cambiata.”
       </blockquote>
       <div class="review-meta">
         <span class="name">Giulia M.</span>
-        <span class="when">Trattamento viso · Marzo 2025</span>
+        <span class="when" data-i18n="rev.1.when">Trattamento viso · Marzo 2025</span>
       </div>
     </div>
 
     <div class="review reveal">
       <span class="review-stars">★★★★★</span>
-      <blockquote>
+      <blockquote data-i18n="rev.2.q">
         “Il massaggio decontratturante è stato il migliore che io abbia mai
         provato a Milano. Pressione perfetta, ambiente caldo, zero
         interruzioni. Esco sempre rigenerata.”
       </blockquote>
       <div class="review-meta">
         <span class="name">Chiara B.</span>
-        <span class="when">Massaggio · Gennaio 2025</span>
+        <span class="when" data-i18n="rev.2.when">Massaggio · Gennaio 2025</span>
       </div>
     </div>
 
     <div class="review reveal">
       <span class="review-stars">★★★★★</span>
-      <blockquote>
+      <blockquote data-i18n="rev.3.q">
         “Apprezzo la trasparenza: ogni prodotto spiegato, ogni passo
         motivato. L'epilazione è delicatissima anche sulla mia pelle
         molto reattiva. Non cambierei atelier per nulla al mondo.”
       </blockquote>
       <div class="review-meta">
         <span class="name">Martina R.</span>
-        <span class="when">Epilazione · Maggio 2025</span>
+        <span class="when" data-i18n="rev.3.when">Epilazione · Maggio 2025</span>
       </div>
     </div>
   </div>
@@ -1780,17 +1811,17 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= FAQ ================= -->
 <section class="section faq" id="faq">
   <div class="section-head reveal">
-    <span class="label">06 — Domande Frequenti</span>
-    <h2 class="display">Prima di <em>chiamarci</em></h2>
+    <span class="label" data-i18n="s.faq.label">06 — Domande Frequenti</span>
+    <h2 class="display" data-i18n="s.faq.title">Prima di <em>chiamarci</em></h2>
   </div>
 
   <div class="faq-list reveal">
     <details class="faq-item">
-      <summary>
+      <summary data-i18n="faq.1.q">
         Come avviene la prima visita?
         <span class="faq-icon"></span>
       </summary>
-      <p class="faq-answer">
+      <p class="faq-answer" data-i18n="faq.1.a">
         La prima consulenza dura circa trenta minuti ed è gratuita e senza
         impegno. Analizziamo insieme la pelle, le abitudini e le aspettative,
         e definiamo un percorso realistico. Solo dopo il tuo consenso
@@ -1799,11 +1830,11 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     </details>
 
     <details class="faq-item">
-      <summary>
+      <summary data-i18n="faq.2.q">
         Devo arrivare in anticipo per l'appuntamento?
         <span class="faq-icon"></span>
       </summary>
-      <p class="faq-answer">
+      <p class="faq-answer" data-i18n="faq.2.a">
         Ti consigliamo di arrivare cinque-dieci minuti prima per accoglierti
         con calma, sederti in reception e scegliere un tè o un infuso. Non
         c'è nessuna sala d'attesa affollata: ogni appuntamento è senza
@@ -1812,11 +1843,11 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     </details>
 
     <details class="faq-item">
-      <summary>
+      <summary data-i18n="faq.3.q">
         Con che frequenza è consigliabile ripetere i trattamenti?
         <span class="faq-icon"></span>
       </summary>
-      <p class="faq-answer">
+      <p class="faq-answer" data-i18n="faq.3.a">
         Dipende dal trattamento: i percorsi viso sono più efficaci in cicli
         di 4-6 sedute con cadenza settimanale o bisettimanale, i trattamenti
         corpo in cicli di quattro sedute, mentre un massaggio può essere
@@ -1825,11 +1856,11 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     </details>
 
     <details class="faq-item">
-      <summary>
+      <summary data-i18n="faq.4.q">
         I prodotti utilizzati sono adatti a pelli sensibili?
         <span class="faq-icon"></span>
       </summary>
-      <p class="faq-answer">
+      <p class="faq-answer" data-i18n="faq.4.a">
         Sì. Selezioniamo formulazioni tracciabili, prive di sostanze
         aggressive e testate con rigore. Per le pelli particolarmente
         reattive utilizziamo linee specifiche e facciamo sempre un test di
@@ -1838,11 +1869,11 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     </details>
 
     <details class="faq-item">
-      <summary>
+      <summary data-i18n="faq.5.q">
         Come si cancella o sposta un appuntamento?
         <span class="faq-icon"></span>
       </summary>
-      <p class="faq-answer">
+      <p class="faq-answer" data-i18n="faq.5.a">
         Basta chiamarci o scriverci almeno 24 ore prima: sposteremo
         l'appuntamento senza costi. Ti chiediamo cortesemente di rispettare
         questo termine, perché ogni fascia oraria è dedicata a una sola
@@ -1851,11 +1882,11 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     </details>
 
     <details class="faq-item">
-      <summary>
+      <summary data-i18n="faq.6.q">
         È possibile regalare un trattamento?
         <span class="faq-icon"></span>
       </summary>
-      <p class="faq-answer">
+      <p class="faq-answer" data-i18n="faq.6.a">
         Certamente. Puoi regalare un trattamento singolo o un buono aperto di
         importo a scelta, valido dodici mesi. Contattaci e prepareremo un
         biglietto scritto a mano, pronto da consegnare.
@@ -1867,21 +1898,21 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= CONTATTI ================= -->
 <section class="section contact" id="contatti">
   <div class="section-head reveal">
-    <span class="label">07 — Contatti</span>
-    <h2 class="display">Scrivici, ti<br>risponderemo <em>presto</em></h2>
+    <span class="label" data-i18n="s.contatti.label">07 — Contatti</span>
+    <h2 class="display" data-i18n="s.contatti.title">Scrivici, ti<br>risponderemo <em>presto</em></h2>
   </div>
 
   <div class="contact-grid">
     <div class="contact-info reveal">
-      <span class="label">Dove siamo</span>
+      <span class="label" data-i18n="contatti.dove">Dove siamo</span>
 
       <ul class="info-list">
         <li>
-          <span class="k">Indirizzo</span>
-          <span class="v">Via della Spiga 42<br>20121 Milano (MI)</span>
+          <span class="k" data-i18n="info.indirizzo.k">Indirizzo</span>
+          <span class="v" data-i18n="info.indirizzo.v">Via della Spiga 42<br>20121 Milano (MI)</span>
         </li>
         <li>
-          <span class="k">Telefono</span>
+          <span class="k" data-i18n="info.telefono.k">Telefono</span>
           <span class="v"><a href="tel:+390287654321">+39 02 8765 4321</a></span>
         </li>
         <li>
@@ -1889,25 +1920,25 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
           <span class="v"><a href="mailto:info@atelierserena.it">info@atelierserena.it</a></span>
         </li>
         <li>
-          <span class="k">Orari</span>
-          <span class="v">Lun – Ven · 09:30 – 20:00<br>Sabato · 10:00 – 18:00<br>Domenica · chiuso</span>
+          <span class="k" data-i18n="info.orari.k">Orari</span>
+          <span class="v" data-i18n="info.orari.v">Lun – Ven · 09:30 – 20:00<br>Sabato · 10:00 – 18:00<br>Domenica · chiuso</span>
         </li>
         <li>
           <span class="k">Metro</span>
-          <span class="v">M1 San Babila · 6 min a piedi<br>M3 Montenapoleone · 4 min a piedi</span>
+          <span class="v" data-i18n="info.metro.v">M1 San Babila · 6 min a piedi<br>M3 Montenapoleone · 4 min a piedi</span>
         </li>
       </ul>
 
-      <div class="map" role="img" aria-label="Mappa indicativa della posizione dell'atelier">
+      <div class="map" role="img" aria-label="Mappa indicativa della posizione dell'atelier" data-i18n-aria="map.aria">
         <span class="pin"></span>
-        <span>Via della Spiga 42 · Milano</span>
+        <span data-i18n="map.span">Via della Spiga 42 · Milano</span>
       </div>
     </div>
 
     <form class="form reveal" id="contactForm">
       <div class="field">
-        <label for="nome">Nome e cognome</label>
-        <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+        <label for="nome" data-i18n="form.nome">Nome e cognome</label>
+        <input type="text" id="nome" name="nome" placeholder="Il tuo nome" data-i18n-placeholder="form.nome.ph" required>
       </div>
 
       <div class="field">
@@ -1916,30 +1947,30 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
       </div>
 
       <div class="field">
-        <label for="telefono">Telefono</label>
+        <label for="telefono" data-i18n="form.telefono">Telefono</label>
         <input type="tel" id="telefono" name="telefono" placeholder="+39 ...">
       </div>
 
       <div class="field">
-        <label for="trattamento">Trattamento</label>
+        <label for="trattamento" data-i18n="form.trattamento">Trattamento</label>
         <select id="trattamento" name="trattamento">
-          <option>Consulenza personalizzata</option>
-          <option>Trattamento viso</option>
-          <option>Trattamento corpo</option>
-          <option>Massaggio</option>
-          <option>Epilazione</option>
+          <option data-i18n="opt.1">Consulenza personalizzata</option>
+          <option data-i18n="opt.2">Trattamento viso</option>
+          <option data-i18n="opt.3">Trattamento corpo</option>
+          <option data-i18n="opt.4">Massaggio</option>
+          <option data-i18n="opt.5">Epilazione</option>
         </select>
         <span class="caret">▾</span>
       </div>
 
       <div class="field full">
-        <label for="messaggio">Messaggio</label>
-        <textarea id="messaggio" name="messaggio" placeholder="Raccontaci cosa cerchi, saremo lieti di consigliarti."></textarea>
+        <label for="messaggio" data-i18n="form.messaggio">Messaggio</label>
+        <textarea id="messaggio" name="messaggio" placeholder="Raccontaci cosa cerchi, saremo lieti di consigliarti." data-i18n-placeholder="form.messaggio.ph"></textarea>
       </div>
 
       <div class="form-submit">
-        <span class="form-note" id="formNote">Risponderemo entro 24 ore lavorative.</span>
-        <button type="submit" class="btn-dark">Invia richiesta</button>
+        <span class="form-note" id="formNote" data-i18n="form.note">Risponderemo entro 24 ore lavorative.</span>
+        <button type="submit" class="btn-dark" data-i18n="form.submit">Invia richiesta</button>
       </div>
     </form>
   </div>
@@ -1948,9 +1979,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= PRENOTA ================= -->
 <section class="booking" id="prenota">
   <div class="booking-head reveal">
-    <span class="label">08 — Prenotazione</span>
-    <h2 class="display">Il tuo momento<br>inizia <em>qui</em></h2>
-    <p>
+    <span class="label" data-i18n="s.prenota.label">08 — Prenotazione</span>
+    <h2 class="display" data-i18n="s.prenota.title">Il tuo momento<br>inizia <em>qui</em></h2>
+    <p data-i18n="s.prenota.p">
       Prenotare è semplice. Scegli il trattamento, indica la fascia oraria
       che preferisci e ti confermeremo l'appuntamento entro poche ore.
     </p>
@@ -1959,8 +1990,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   <div class="booking-steps">
     <div class="bstep reveal">
       <span class="bstep-num">01</span>
-      <h4>Scegli il trattamento</h4>
-      <p>
+      <h4 data-i18n="bs.1.h">Scegli il trattamento</h4>
+      <p data-i18n="bs.1.p">
         Consulta la sezione trattamenti e individua quello più adatto a te.
         Se hai dubbi, seleziona "Consulenza personalizzata".
       </p>
@@ -1968,8 +1999,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
     <div class="bstep reveal">
       <span class="bstep-num">02</span>
-      <h4>Indica la tua disponibilità</h4>
-      <p>
+      <h4 data-i18n="bs.2.h">Indica la tua disponibilità</h4>
+      <p data-i18n="bs.2.p">
         Scrivici il giorno e la fascia oraria preferita. Ti confermeremo
         l'appuntamento in base alle disponibilità reali dell'atelier.
       </p>
@@ -1977,8 +2008,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 
     <div class="bstep reveal">
       <span class="bstep-num">03</span>
-      <h4>Ricevi la conferma</h4>
-      <p>
+      <h4 data-i18n="bs.3.h">Ricevi la conferma</h4>
+      <p data-i18n="bs.3.p">
         Entro 24 ore riceverai un messaggio con data, orario e indicazioni
         pratiche per raggiungerci in Via della Spiga 42.
       </p>
@@ -1986,9 +2017,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   </div>
 
   <div class="booking-actions reveal">
-    <a href="#contatti" class="btn-dark">Compila il modulo</a>
+    <a href="#contatti" class="btn-dark" data-i18n="prenota.cta">Compila il modulo</a>
     <a href="tel:+390287654321" class="booking-phone">
-      <small>Oppure chiamaci</small>
+      <small data-i18n="prenota.chiamaci">Oppure chiamaci</small>
       +39 02 8765 4321
     </a>
   </div>
@@ -2000,29 +2031,29 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     <div>
       <div class="brand">
         <span class="brand-name">Atelier Serena</span>
-        <span class="brand-sub">Estetica · Benessere</span>
+        <span class="brand-sub" data-i18n="brand.sub">Estetica · Benessere</span>
       </div>
-      <p class="footer-about">
+      <p class="footer-about" data-i18n="footer.about">
         Un atelier dedicato alla cura della persona, dove la bellezza
         si costruisce con ascolto, materia e tempo.
       </p>
     </div>
 
     <div>
-      <h4>Naviga</h4>
+      <h4 data-i18n="footer.naviga">Naviga</h4>
       <ul>
-        <li><a href="#filosofia">Filosofia</a></li>
-        <li><a href="#trattamenti">Trattamenti</a></li>
-        <li><a href="#approccio">Approccio</a></li>
-        <li><a href="#ambiente">Ambiente</a></li>
-        <li><a href="#recensioni">Recensioni</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#prenota">Prenota</a></li>
+        <li><a href="#filosofia" data-i18n="nav.filosofia">Filosofia</a></li>
+        <li><a href="#trattamenti" data-i18n="nav.trattamenti">Trattamenti</a></li>
+        <li><a href="#approccio" data-i18n="nav.approccio">Approccio</a></li>
+        <li><a href="#ambiente" data-i18n="nav.ambiente">Ambiente</a></li>
+        <li><a href="#recensioni" data-i18n="nav.recensioni">Recensioni</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#prenota" data-i18n="nav.prenota">Prenota</a></li>
       </ul>
     </div>
 
     <div>
-      <h4>Trattamenti</h4>
+      <h4 data-i18n="footer.trattamenti">Trattamenti</h4>
       <ul>
         <li><a href="#trattamenti" data-goto-tab="viso">Viso</a></li>
         <li><a href="#trattamenti" data-goto-tab="corpo">Corpo</a></li>
@@ -2032,17 +2063,17 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     </div>
 
     <div>
-      <h4>Contatti</h4>
+      <h4 data-i18n="footer.contatti">Contatti</h4>
       <ul>
         <li><a href="tel:+390287654321">+39 02 8765 4321</a></li>
         <li><a href="mailto:info@atelierserena.it">info@atelierserena.it</a></li>
-        <li><a href="#contatti">Via della Spiga 42, Milano</a></li>
+        <li><a href="#contatti" data-i18n="footer.via">Via della Spiga 42, Milano</a></li>
       </ul>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <span>© 2025 Atelier Serena · P.IVA 01234567890</span>
+    <span data-i18n="footer.copy">© 2025 Atelier Serena · P.IVA 01234567890</span>
     <span>Privacy Policy · Cookie Policy</span>
   </div>
 </footer>
@@ -2050,6 +2081,241 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <script>
 (function(){
   'use strict';
+
+  /* ==========================================
+     I18N — IT / EN
+     ========================================== */
+  var I18N = {
+    'brand.sub': 'Beauty · Well-being',
+    'burger.aria': 'Open menu',
+    'nav.filosofia': 'Philosophy',
+    'nav.trattamenti': 'Treatments',
+    'nav.approccio': 'Approach',
+    'nav.ambiente': 'The Space',
+    'nav.recensioni': 'Reviews',
+    'nav.faq': 'FAQ',
+    'nav.contatti': 'Contact',
+    'nav.prenotaOra': 'Book now',
+    'nav.prenota': 'Book',
+    'hero.label': 'Since 2009 — Milan',
+    'hero.title': 'Self-care<br>as a <em>form of art</em>',
+    'hero.sub': 'A place where time slows down. Tailored treatments, unhurried gestures and genuine attention to the person, to restore the balance between body, skin and mind.',
+    'hero.cta1': 'Discover the treatments',
+    'hero.cta2': 'Our philosophy',
+    'hero.scroll': 'Scroll',
+    'statement.quote': 'The time you devote to yourself<br>is never <em>time taken away</em>.',
+    'statement.lead': 'We believe in a beauty that is not imposed, but revealed. Every treatment is born from listening, from respect for the natural rhythms of the skin, and from the conviction that true well-being is a daily practice, not an exception.',
+    's.filosofia.label': '01 — The Philosophy',
+    's.filosofia.title': "An idea of beauty<br>born from <em>well-being</em>",
+    'filo.label': 'Our thinking',
+    'filo.title': 'Listening before<br><em>acting</em>',
+    'filo.p1': 'Atelier Serena was born from a simple thought: the skin is a story to be read with delicacy. There are no identical formulas for everyone, because each person carries their own rhythm, sensitivity and moment in life.',
+    'filo.p2': 'That is why we work with personalised protocols, products selected for their purity and hands trained to listen before acting.',
+    'filo.sig.small': 'Founder & Technical Director',
+    'storia.label': '01.1 — The Story',
+    'storia.title': 'Fifteen years of <em>unhurried gestures</em>',
+    'storia.p1': 'In 2009 Serena Vitale opened a small studio in a Milanese courtyard, with a single cabin and the idea of offering treatments without haste. Over the years the atelier has grown, but the method remains the same: relaxed times, one client at a time, no overlapping appointments.',
+    'storia.p2': 'Today Atelier Serena occupies three rooms in Via della Spiga and welcomes a limited number of people each day. A deliberate choice, allowing us to dedicate to each one the time they deserve.',
+    'valori.label': '01.2 — The Values',
+    'valori.1.h': 'Respect',
+    'valori.1.p': 'No protocol is imposed. Every journey begins with a conversation and adapts to the skin, timing and expectations of the person in front of us.',
+    'valori.2.h': 'Transparency',
+    'valori.2.p': 'We know and declare every ingredient we use. We select traceable formulations, free of aggressive substances and rigorously tested.',
+    'valori.3.h': 'Sustainability',
+    'valori.3.p': 'Less waste, more care. Where possible we work with loose products, reduce packaging and choose suppliers who share our idea of care.',
+    's.trattamenti.label': '02 — The Treatments',
+    's.trattamenti.title': 'Tailored <em>rituals</em>',
+    'tab.viso': 'Face',
+    'tab.corpo': 'Body',
+    'tab.massaggi': 'Massage',
+    'tab.epilazione': 'Hair removal',
+    'viso.label': '02.1 — Face',
+    'viso.title': 'Radiance that<br>is <em>built</em>',
+    'viso.p1': 'Every face journey begins with a skin analysis under natural light: hydration, elasticity, pores, pigmentation. From here we build a protocol that respects the skin barrier and its recovery times.',
+    'viso.p2': 'We use cosmetics based on low-molecular-weight hyaluronic acid, niacinamide, vitamins and soothing plant actives. No aggressive treatments, no impossible promises.',
+    'viso.1': 'Essential deep cleansing · 60 min',
+    'viso.2': 'Intensive hydration · 75 min',
+    'viso.3': 'Progressive anti-age protocol · 90 min',
+    'viso.4': 'Pre-event brightening treatment · 50 min',
+    'corpo.label': '02.2 — Body',
+    'corpo.title': 'Lightness<br>and <em>tone</em>',
+    'corpo.p1': 'Scrubs, muds and draining treatments designed to give the skin of the body the same care we reserve for the face. Embracing textures, calibrated temperatures, slow and deep manual techniques.',
+    'corpo.p2': 'Recommended in cycles of four sessions for a visible and lasting result, weekly or bi-weekly.',
+    'corpo.1': 'Citrus body scrub · 45 min',
+    'corpo.2': 'Draining mud for legs and glutes · 60 min',
+    'corpo.3': 'Complete toning treatment · 80 min',
+    'corpo.4': 'Complete body ritual (scrub + mud + hydration) · 110 min',
+    'massaggi.label': '02.3 — Massage',
+    'massaggi.title': 'Releasing<br><em>tension</em>',
+    'massaggi.p1': 'From relaxing to decontracting, every massage is calibrated to your preferred pressure. Our approach combines classic manual techniques with myofascial work, to release deep knots without ever being invasive.',
+    'massaggi.p2': 'The environment is silent, with dimmed light and warm oils. The time of the massage is entirely dedicated to you: no interruptions, no haste.',
+    'massaggi.1': 'Relaxing massage · 50 min',
+    'massaggi.2': 'Decontracting back and neck massage · 50 min',
+    'massaggi.3': 'Draining leg massage · 45 min',
+    'massaggi.4': 'Full body massage · 80 min',
+    'epilazione.label': '02.4 — Hair Removal',
+    'epilazione.title': 'Gentleness<br>even on <em>sensitive skin</em>',
+    'epilazione.p1': 'We use low-melting-point waxes and controlled-pull techniques, designed to minimise discomfort. Before each session we apply a soothing lotion and, at the end, a specific calming oil.',
+    'epilazione.p2': 'Specific formulas are also available for delicate areas and particularly reactive skin.',
+    'epilazione.1': 'Eyebrows or upper lip',
+    'epilazione.2': 'Underarms or partial bikini',
+    'epilazione.3': 'Half leg',
+    'epilazione.4': 'Full leg',
+    'tg.1.h': 'Face',
+    'tg.1.p': 'Deep cleansing, intensive hydration and anti-age protocols built on reading the skin.',
+    'tg.1.m': 'From 60 min · from €85',
+    'tg.2.h': 'Body',
+    'tg.2.p': 'Scrubs, muds and draining treatments to restore tone, lightness and radiance to the skin.',
+    'tg.2.m': 'From 75 min · from €110',
+    'tg.3.h': 'Massage',
+    'tg.3.p': 'From relaxing to decontracting, slow and deep manual techniques to release tension and fatigue.',
+    'tg.3.m': 'From 50 min · from €75',
+    'tg.4.h': 'Hair removal',
+    'tg.4.p': 'Delicate waxes and low-impact techniques, designed for even the most sensitive skin.',
+    'tg.4.m': 'From 20 min · from €18',
+    's.approccio.label': "03 — The Approach",
+    's.approccio.title': 'Three gestures that<br>make the <em>difference</em>',
+    'pil.1.h': 'Listening',
+    'pil.1.p': 'Every journey begins with a dedicated consultation. We analyse the skin, habits and expectations, to build together a realistic and respectful programme.',
+    'pil.2.h': 'Substance',
+    'pil.2.p': 'We select cosmetic formulations with traceable ingredients, free of aggressive substances. We believe that what we apply to the skin must be as effective as it is gentle.',
+    'pil.3.h': 'Continuity',
+    'pil.3.p': 'Well-being is a practice, not an event. We accompany you over time with maintenance plans and daily advice, so results last beyond the atelier door.',
+    'metodo.label': '03.1 — The Method',
+    'metodo.title': 'Four steps,<br>no shortcuts',
+    'step.1.h5': 'Phase 01',
+    'step.1.h': 'Consultation',
+    'step.1.p': 'Thirty minutes of listening and skin analysis, without obligation. Together we define realistic goals and the number of sessions needed.',
+    'step.2.h5': 'Phase 02',
+    'step.2.h': 'Protocol',
+    'step.2.p': 'We build a personalised plan, with products and techniques chosen according to your skin’s response.',
+    'step.3.h5': 'Phase 03',
+    'step.3.h': 'Treatment',
+    'step.3.p': 'Each session lasts as long as necessary, with no overlaps. We work in a silent environment, with calibrated light and temperature.',
+    'step.4.h5': 'Phase 04',
+    'step.4.h': 'Maintenance',
+    'step.4.p': 'At the end of the cycle you receive daily guidance and a schedule of touch-ups to preserve results over time.',
+    's.ambiente.label': '04 — The Space',
+    's.ambiente.title': 'A space that<br>breathes <em>with you</em>',
+    'spazi.label': '04.1 — The Rooms',
+    'spazi.title': 'Three rooms, one single <em>atmosphere</em>',
+    'spazio.1.h': 'The Reception',
+    'spazio.1.p': 'A warm entrance, with natural light and a selection of teas and infusions. It is the place where you take your time before starting: no haste, no crowded waiting room.',
+    'spazio.2.h': 'The Cabins',
+    'spazio.2.p': 'Two soundproofed cabins, with heated beds, adjustable lighting and essential oil diffusion. Each cabin has a private corner to change at your own pace.',
+    'spazio.3.h': 'The Relax Corner',
+    'spazio.3.p': 'At the end of the treatment, a small space with armchairs, herbal teas and soft music. An invitation not to get up at once, to let the feeling of well-being settle.',
+    'quote.text': '“Authentic beauty is not added:<br>it awakens, with patience.”',
+    's.recensioni.label': '05 — Reviews',
+    's.recensioni.title': 'Stories of those who<br>took <em>care of themselves</em>',
+    'rev.1.q': '“A rarefied and silent place, where haste does not exist. The consultation was true listening and after three sessions my skin literally changed.”',
+    'rev.1.when': 'Face treatment · March 2025',
+    'rev.2.q': '“The decontracting massage was the best I have ever had in Milan. Perfect pressure, warm environment, zero interruptions. I always leave regenerated.”',
+    'rev.2.when': 'Massage · January 2025',
+    'rev.3.q': '“I appreciate the transparency: every product explained, every step motivated. Hair removal is extremely gentle even on my very reactive skin. I would not change atelier for anything in the world.”',
+    'rev.3.when': 'Hair removal · May 2025',
+    's.faq.label': '06 — Frequently Asked Questions',
+    's.faq.title': 'Before <em>calling us</em>',
+    'faq.1.q': 'How does the first visit work?',
+    'faq.1.a': 'The first consultation lasts about thirty minutes and is free and without obligation. Together we analyse the skin, habits and expectations, and define a realistic journey. Only after your consent do we proceed with the first treatment.',
+    'faq.2.q': 'Should I arrive early for my appointment?',
+    'faq.2.a': 'We recommend arriving five to ten minutes early so we can welcome you calmly, seat you in the reception and offer you a tea or infusion. There is no crowded waiting room: every appointment has no overlaps, so your time starts punctually.',
+    'faq.3.q': 'How often should treatments be repeated?',
+    'faq.3.a': 'It depends on the treatment: face journeys are most effective in cycles of 4-6 sessions weekly or bi-weekly, body treatments in cycles of four sessions, while a massage can be a single appointment or a monthly maintenance ritual.',
+    'faq.4.q': 'Are the products suitable for sensitive skin?',
+    'faq.4.a': 'Yes. We select traceable formulations, free of aggressive substances and rigorously tested. For particularly reactive skin we use specific lines and always perform a tolerability test before the treatment.',
+    'faq.5.q': 'How can I cancel or reschedule an appointment?',
+    'faq.5.a': 'Just call or write to us at least 24 hours in advance: we will reschedule the appointment at no cost. We kindly ask you to respect this deadline, because every time slot is dedicated to a single person.',
+    'faq.6.q': 'Is it possible to gift a treatment?',
+    'faq.6.a': 'Certainly. You can gift a single treatment or an open-value voucher, valid for twelve months. Contact us and we will prepare a handwritten card, ready to give.',
+    's.contatti.label': '07 — Contact',
+    's.contatti.title': 'Write to us,<br>we will reply <em>soon</em>',
+    'contatti.dove': 'Where we are',
+    'info.indirizzo.k': 'Address',
+    'info.indirizzo.v': 'Via della Spiga 42<br>20121 Milan (MI)',
+    'info.telefono.k': 'Phone',
+    'info.orari.k': 'Opening hours',
+    'info.orari.v': 'Mon – Fri · 09:30 – 20:00<br>Saturday · 10:00 – 18:00<br>Sunday · closed',
+    'info.metro.v': 'M1 San Babila · 6 min walk<br>M3 Montenapoleone · 4 min walk',
+    'map.aria': 'Indicative map of the atelier location',
+    'map.span': 'Via della Spiga 42 · Milan',
+    'form.nome': 'Full name',
+    'form.nome.ph': 'Your name',
+    'form.telefono': 'Phone',
+    'form.trattamento': 'Treatment',
+    'opt.1': 'Personalised consultation',
+    'opt.2': 'Face treatment',
+    'opt.3': 'Body treatment',
+    'opt.4': 'Massage',
+    'opt.5': 'Hair removal',
+    'form.messaggio': 'Message',
+    'form.messaggio.ph': 'Tell us what you are looking for, we will be happy to advise you.',
+    'form.note': 'We will reply within 24 working hours.',
+    'form.submit': 'Send request',
+    's.prenota.label': '08 — Booking',
+    's.prenota.title': 'Your moment<br>starts <em>here</em>',
+    's.prenota.p': 'Booking is simple. Choose the treatment, indicate your preferred time slot and we will confirm the appointment within a few hours.',
+    'bs.1.h': 'Choose the treatment',
+    'bs.1.p': 'Browse the treatments section and find the one that suits you best. If in doubt, select “Personalised consultation”.',
+    'bs.2.h': 'Indicate your availability',
+    'bs.2.p': 'Write us your preferred day and time slot. We will confirm the appointment based on the atelier’s actual availability.',
+    'bs.3.h': 'Receive the confirmation',
+    'bs.3.p': 'Within 24 hours you will receive a message with date, time and practical directions to reach us in Via della Spiga 42.',
+    'prenota.cta': 'Fill in the form',
+    'prenota.chiamaci': 'Or call us',
+    'footer.about': 'An atelier dedicated to the care of the person, where beauty is built with listening, substance and time.',
+    'footer.naviga': 'Navigate',
+    'footer.trattamenti': 'Treatments',
+    'footer.contatti': 'Contact',
+    'footer.via': 'Via della Spiga 42, Milan',
+    'footer.copy': '© 2025 Atelier Serena · VAT 01234567890'
+  };
+
+  var LANG_KEY = 'atelier-lang';
+  var langButtons = document.querySelectorAll('#langSwitch button');
+
+  function applyLanguage(lang){
+    var isEn = (lang === 'en');
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (isEn && I18N[key] !== undefined) el.innerHTML = I18N[key];
+      else if (!isEn) el.innerHTML = el.getAttribute('data-i18n-original') || el.innerHTML;
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-aria');
+      if (isEn && I18N[key] !== undefined) el.setAttribute('aria-label', I18N[key]);
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (isEn && I18N[key] !== undefined) el.setAttribute('placeholder', I18N[key]);
+    });
+
+    langButtons.forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+  }
+
+  // Store originals on first run (Italian markup)
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    el.setAttribute('data-i18n-original', el.innerHTML);
+  });
+
+  langButtons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var lang = b.getAttribute('data-lang');
+      try { localStorage.setItem(LANG_KEY, lang); } catch(e){}
+      applyLanguage(lang);
+    });
+  });
+
+  // Restore saved language (default: it)
+  var savedLang = 'it';
+  try { savedLang = localStorage.getItem(LANG_KEY) || 'it'; } catch(e){}
+  if (savedLang === 'en') applyLanguage('en');
 
   var nav         = document.getElementById('nav');
   var burger      = document.getElementById('burger');
@@ -2249,7 +2515,9 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   if (form) {
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      formNote.textContent = 'Grazie! Ti ricontatteremo entro 24 ore lavorative.';
+      formNote.textContent = (document.documentElement.lang === 'en')
+        ? 'Thank you! We will get back to you within 24 working hours.'
+        : 'Grazie! Ti ricontatteremo entro 24 ore lavorative.';
       formNote.style.color = '#BFA37A';
       form.reset();
     });
