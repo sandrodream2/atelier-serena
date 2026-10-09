@@ -5,9 +5,11 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Atelier Serena — Beauty &amp; Well-being</title>
-<link href="https://sandrodream2.github.io/atelier-serena/en/" rel="canonical"/>
-<link href="https://sandrodream2.github.io/atelier-serena/" hreflang="it" rel="alternate"/>
-<link href="https://sandrodream2.github.io/atelier-serena/en/" hreflang="en" rel="alternate"/>
+<link href="https://sandrodream2.github.io/atelier-serena/en/" rel="canonical"/><link href="https://sandrodream2.github.io/atelier-serena/" hreflang="it" rel="alternate"/><link href="https://sandrodream2.github.io/atelier-serena/en/" hreflang="en" rel="alternate"/><link href="https://sandrodream2.github.io/atelier-serena/es/" hreflang="es" rel="alternate"/><link href="https://sandrodream2.github.io/atelier-serena/" hreflang="x-default" rel="alternate"/>
+
+
+
+
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@200;300;400;500&amp;display=swap" rel="stylesheet"/>
@@ -1261,6 +1263,8 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <button class="active" data-lang="it" type="button">IT</button>
 <span class="sep">/</span>
 <button data-lang="en" type="button" class="active">EN</button>
+<span class="sep">/</span>
+<button data-lang="es" type="button">ES</button>
 </div>
 <button aria-expanded="false" aria-label="Open menu" class="burger" data-i18n-aria="burger.aria" id="burger">
 <span></span><span></span>
@@ -1308,7 +1312,7 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <section class="section" id="filosofia">
 <div class="section-head reveal">
 <span class="label" data-i18n="s.filosofia.label">01 — The Philosophy</span>
-<h2 class="display" data-i18n="s.filosofia.title">Un'idea di bellezza<br/>che nasce dal <em>benessere</em></h2>
+<h2 class="display" data-i18n="s.filosofia.title">An idea of beauty<br/>born from <em>well-being</em></h2>
 </div>
 <div class="philosophy">
 <div class="philosophy-img reveal-img reveal">
@@ -1504,7 +1508,7 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 <!-- ================= APPROCCIO ================= -->
 <section class="section approach" id="approccio">
 <div class="section-head reveal">
-<span class="label" data-i18n="s.approccio.label">03 — L'Approccio</span>
+<span class="label" data-i18n="s.approccio.label">03 — The Approach</span>
 <h2 class="display" data-i18n="s.approccio.title">Three gestures that<br/>make the <em>difference</em></h2>
 </div>
 <div class="pillars">
@@ -1815,7 +1819,7 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
 </div>
 </div>
 <div class="footer-bottom">
-<span data-i18n="footer.copy">© 2025 Atelier Serena · P.IVA 01234567890</span>
+<span data-i18n="footer.copy">© 2025 Atelier Serena · VAT 01234567890</span>
 <span>Privacy Policy · Cookie Policy</span>
 </div>
 </footer>
@@ -2024,38 +2028,249 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
     'footer.trattamenti': 'Treatments',
     'footer.contatti': 'Contact',
     'footer.via': 'Via della Spiga 42, Milan',
-    'footer.copy': '© 2025 Atelier Serena · VAT 01234567890'
+    'footer.copy': '© 2025 Atelier Serena · VAT 01234567890',
   };
 
+  var I18N_ES = {
+    'doc.title': 'Atelier Serena — Estética y Bienestar',
+    'img.hero': 'Interior de un centro de estética iluminado con luz natural',
+    'img.filo': 'Detalle de un tratamiento facial',
+    'img.viso': 'Tratamiento facial profesional',
+    'img.corpo': 'Tratamiento corporal con exfoliación',
+    'img.massaggi': 'Masaje relajante',
+    'img.epilazione': 'Productos para la depilación delicada',
+    'img.tg1': 'Tratamiento facial',
+    'img.tg2': 'Tratamiento corporal',
+    'img.tg3': 'Masaje relajante',
+    'img.tg4': 'Productos de cuidado de la piel',
+    'img.env': 'Sala de tratamientos del centro de estética',
+    'img.env1': 'Detalle de productos y piedras para tratamientos',
+    'img.env2': 'Tratamiento facial en curso',
+    'img.env3': 'Interior del atelier',
+    'brand.sub': 'Estética · Bienestar',
+    'burger.aria': 'Abrir menú',
+    'nav.filosofia': 'Filosofía',
+    'nav.trattamenti': 'Tratamientos',
+    'nav.approccio': 'Enfoque',
+    'nav.ambiente': 'El Espacio',
+    'nav.recensioni': 'Reseñas',
+    'nav.faq': 'FAQ',
+    'nav.contatti': 'Contacto',
+    'nav.prenota': 'Reservar',
+    'nav.prenotaOra': 'Reservar ahora',
+    'hero.label': 'Desde 2009 — Milán',
+    'hero.title': 'El cuidado de uno mismo<br>como <em>forma de arte</em>',
+    'hero.sub': 'Un lugar donde el tiempo se ralentiza. Tratamientos a medida, gestos sin prisa y atención auténtica a la persona, para recuperar el equilibrio entre cuerpo, piel y mente.',
+    'hero.cta1': 'Descubre los tratamientos',
+    'hero.cta2': 'Nuestra filosofía',
+    'hero.scroll': 'Desliza',
+    'statement.quote': 'El tiempo que te dedicas<br>nunca es <em>tiempo restado</em>.',
+    'statement.lead': 'Creemos en una belleza que no se impone, sino que se revela. Cada tratamiento nace de la escucha, del respeto por los ritmos naturales de la piel y de la convicción de que el verdadero bienestar es una práctica diaria, no una excepción.',
+    's.filosofia.label': '01 — La Filosofía',
+    's.filosofia.title': 'Una idea de belleza<br>que nace del <em>bienestar</em>',
+    'filo.label': 'Nuestro pensamiento',
+    'filo.title': 'Escuchar antes<br>de <em>actuar</em>',
+    'filo.p1': 'Atelier Serena nace de un pensamiento simple: la piel es una historia que hay que leer con delicadeza. No existen fórmulas idénticas para todos, porque cada persona lleva consigo un ritmo, una sensibilidad, un momento de la vida.',
+    'filo.p2': 'Por eso trabajamos con protocolos personalizados, productos seleccionados por su pureza y manos formadas para escuchar antes de actuar.',
+    'filo.sig.small': 'Fundadora & Directora Técnica',
+    'storia.label': '01.1 — La Historia',
+    'storia.title': 'Quince años de <em>gestos lentos</em>',
+    'storia.p1': 'En 2009 Serena Vitale abre un pequeño estudio en un patio milanés, con una sola cabina y la idea de ofrecer tratamientos sin prisa. Con los años el atelier crece, pero el método sigue siendo el mismo: tiempos distendidos, un cliente a la vez, sin citas superpuestas.',
+    'storia.p2': 'Hoy Atelier Serena ocupa tres espacios en Via della Spiga y acoge cada día a un número limitado de personas. Una elección deliberada, que permite dedicar a cada una el tiempo que merece.',
+    'valori.label': '01.2 — Los Valores',
+    'valori.1.h': 'Respeto',
+    'valori.1.p': 'Ningún protocolo se impone. Cada recorrido nace de una conversación y se adapta a la piel, a los tiempos y a las expectativas de la persona que tenemos delante.',
+    'valori.2.h': 'Transparencia',
+    'valori.2.p': 'Conocemos y declaramos cada ingrediente que utilizamos. Seleccionamos formulaciones trazables, sin sustancias agresivas y probadas con rigor.',
+    'valori.3.h': 'Sostenibilidad',
+    'valori.3.p': 'Menos desperdicio, más atención. Trabajamos con productos a granel cuando es posible, reducimos los envases y elegimos proveedores que comparten nuestra idea de cuidado.',
+    's.trattamenti.label': '02 — Los Tratamientos',
+    's.trattamenti.title': 'Rituales <em>a medida</em>',
+    'tab.viso': 'Rostro',
+    'tab.corpo': 'Cuerpo',
+    'tab.massaggi': 'Masajes',
+    'tab.epilazione': 'Depilación',
+    'viso.label': '02.1 — Rostro',
+    'viso.title': 'Luminosidad que<br>se <em>construye</em>',
+    'viso.p1': 'Cada recorrido facial comienza con un análisis de la piel bajo luz natural: hidratación, elasticidad, poros, pigmentaciones. A partir de aquí construimos un protocolo que respeta la barrera cutánea y sus tiempos de recuperación.',
+    'viso.p2': 'Utilizamos cosméticos a base de ácido hialurónico de bajo peso molecular, niacinamida, vitaminas y activos vegetales calmantes. Ningún tratamiento agresivo, ninguna promesa imposible.',
+    'viso.1': 'Limpieza profunda esencial · 60 min',
+    'viso.2': 'Hidratación intensiva · 75 min',
+    'viso.3': 'Protocolo antiedad progresivo · 90 min',
+    'viso.4': 'Tratamiento iluminador pre-evento · 50 min',
+    'corpo.label': '02.2 — Cuerpo',
+    'corpo.title': 'Ligereza<br>y <em>tono</em>',
+    'corpo.p1': 'Exfoliaciones, fangos y tratamientos drenantes pensados para devolver a la piel del cuerpo el mismo cuidado que reservamos al rostro. Texturas envolventes, temperaturas calibradas, manualidades lentas y profundas.',
+    'corpo.p2': 'Recomendados en ciclos de cuatro sesiones para un resultado visible y duradero, con cadencia semanal o quincenal.',
+    'corpo.1': 'Exfoliación corporal de cítricos · 45 min',
+    'corpo.2': 'Fango drenante de piernas y glúteos · 60 min',
+    'corpo.3': 'Tratamiento reafirmante completo · 80 min',
+    'corpo.4': 'Ritual corporal completo (exfoliación + fango + hidratación) · 110 min',
+    'massaggi.label': '02.3 — Masajes',
+    'massaggi.title': 'Liberar<br>la <em>tensión</em>',
+    'massaggi.p1': 'Del relajante al descontracturante, cada masaje se calibra según la presión deseada. Nuestro enfoque combina manualidades clásicas con técnicas miofasciales, para liberar nudos profundos sin resultar nunca invasivo.',
+    'massaggi.p2': 'El ambiente es silencioso, con luz atenuada y aceites calientes. El tiempo del masaje está dedicado por completo a ti: sin interrupciones, sin prisa.',
+    'massaggi.1': 'Masaje relajante · 50 min',
+    'massaggi.2': 'Masaje descontracturante de espalda y cuello · 50 min',
+    'massaggi.3': 'Masaje drenante de piernas · 45 min',
+    'massaggi.4': 'Masaje corporal completo · 80 min',
+    'epilazione.label': '02.4 — Depilación',
+    'epilazione.title': 'Delicadeza<br>también en <em>piel sensible</em>',
+    'epilazione.p1': 'Utilizamos ceras de bajo punto de fusión y técnicas de tirón controlado, pensadas para reducir al mínimo las molestias. Antes de cada sesión aplicamos un calmante y, al final, un aceite calmante específico.',
+    'epilazione.p2': 'También disponemos de fórmulas específicas para zonas delicadas y pieles particularmente reactivas.',
+    'epilazione.1': 'Cejas o labio superior',
+    'epilazione.2': 'Axilas o bikini parcial',
+    'epilazione.3': 'Media pierna',
+    'epilazione.4': 'Pierna completa',
+    'tg.1.h': 'Rostro',
+    'tg.1.p': 'Limpieza profunda, hidratación intensiva y protocolos antiedad construidos sobre la lectura de la piel.',
+    'tg.1.m': 'Desde 60 min · desde 85 €',
+    'tg.2.h': 'Cuerpo',
+    'tg.2.p': 'Exfoliaciones, fangos y tratamientos drenantes para devolver tono, ligereza y luminosidad a la piel.',
+    'tg.2.m': 'Desde 75 min · desde 110 €',
+    'tg.3.h': 'Masajes',
+    'tg.3.p': 'Del relajante al descontracturante, manualidades lentas y profundas para liberar tensión y cansancio.',
+    'tg.3.m': 'Desde 50 min · desde 75 €',
+    'tg.4.h': 'Depilación',
+    'tg.4.p': 'Ceras delicadas y técnicas de bajo impacto, pensadas incluso para las pieles más sensibles.',
+    'tg.4.m': 'Desde 20 min · desde 18 €',
+    's.approccio.label': '03 — El Enfoque',
+    's.approccio.title': 'Tres gestos que<br>hacen la <em>diferencia</em>',
+    'pil.1.h': 'Escucha',
+    'pil.1.p': 'Cada recorrido comienza con una consulta dedicada. Analizamos la piel, los hábitos y las expectativas, para construir juntos un programa realista y respetuoso con tus tiempos.',
+    'pil.2.h': 'Sustancia',
+    'pil.2.p': 'Seleccionamos formulaciones cosméticas con ingredientes trazables, sin sustancias agresivas. Creemos que lo que aplicamos sobre la piel debe ser tan eficaz como gentil.',
+    'pil.3.h': 'Continuidad',
+    'pil.3.p': 'El bienestar es una práctica, no un evento. Te acompañamos en el tiempo con planes de mantenimiento y consejos diarios, para que los resultados duren más allá de la puerta del atelier.',
+    'metodo.label': '03.1 — El Método',
+    'metodo.title': 'Cuatro pasos,<br>sin atajos',
+    'step.1.h5': 'Fase 01',
+    'step.1.h': 'Consulta',
+    'step.1.p': 'Treinta minutos de escucha y análisis de la piel, sin compromiso. Juntos definimos objetivos realistas y el número de sesiones necesarias.',
+    'step.2.h5': 'Fase 02',
+    'step.2.h': 'Protocolo',
+    'step.2.p': 'Construimos un plan personalizado a medida, con productos y técnicas elegidos según la respuesta de tu piel.',
+    'step.3.h5': 'Fase 03',
+    'step.3.h': 'Tratamiento',
+    'step.3.p': 'Cada sesión dura el tiempo necesario, sin superposiciones. Trabajamos en un ambiente silencioso, con luz y temperatura calibradas.',
+    'step.4.h5': 'Fase 04',
+    'step.4.h': 'Mantenimiento',
+    'step.4.p': 'Al final del ciclo recibes indicaciones diarias y una cadencia de recordatorios para conservar los resultados en el tiempo.',
+    's.ambiente.label': '04 — El Espacio',
+    's.ambiente.title': 'Un espacio que<br>respira <em>contigo</em>',
+    'spazi.label': '04.1 — Los Espacios',
+    'spazi.title': 'Tres espacios, una única <em>atmósfera</em>',
+    'spazio.1.h': 'La Recepción',
+    'spazio.1.p': 'Una entrada cálida, con luz natural y una selección de tés e infusiones. Es el lugar donde se toma tiempo antes de empezar: sin prisa, sin sala de espera abarrotada.',
+    'spazio.2.h': 'Las Cabinas',
+    'spazio.2.p': 'Dos cabinas insonorizadas, con camillas calentadas, luz regulable y difusión de aceites esenciales. Cada cabina tiene un rincón privado para cambiarse con calma.',
+    'spazio.3.h': 'El Rincón Relax',
+    'spazio.3.p': 'Al final del tratamiento, un pequeño espacio con sillones, infusiones y música suave. Una invitación a no levantarse de inmediato, a dejar que la sensación de bienestar se asiente.',
+    'quote.text': '“La belleza auténtica no se añade:<br>se despierta, con paciencia.”',
+    's.recensioni.label': '05 — Las Reseñas',
+    's.recensioni.title': 'Historias de quienes<br>se han <em>cuidado de sí mismos</em>',
+    'rev.1.q': '“Un lugar rarificado y silencioso, donde la prisa no existe. La consulta fue una escucha verdadera y tras tres sesiones mi piel cambió literalmente.”',
+    'rev.1.when': 'Tratamiento facial · Marzo 2025',
+    'rev.2.q': '“El masaje descontracturante fue el mejor que he probado en Milán. Presión perfecta, ambiente cálido, cero interrupciones. Siempre salgo regenerada.”',
+    'rev.2.when': 'Masaje · Enero 2025',
+    'rev.3.q': '“Aprecio la transparencia: cada producto explicado, cada paso motivado. La depilación es delicadísima incluso en mi piel muy reactiva. No cambiaría de atelier por nada del mundo.”',
+    'rev.3.when': 'Depilación · Mayo 2025',
+    's.faq.label': '06 — Preguntas Frecuentes',
+    's.faq.title': 'Antes de <em>llamarnos</em>',
+    'faq.1.q': '¿Cómo funciona la primera visita?',
+    'faq.1.a': 'La primera consulta dura unos treinta minutos y es gratuita y sin compromiso. Juntos analizamos la piel, los hábitos y las expectativas, y definimos un recorrido realista. Solo con tu consentimiento procedemos con el primer tratamiento.',
+    'faq.2.q': '¿Debo llegar con antelación a la cita?',
+    'faq.2.a': 'Te recomendamos llegar de cinco a diez minutos antes para acogerte con calma, sentarte en la recepción y elegir un té o infusión. No hay sala de espera abarrotada: cada cita es sin superposiciones, por lo que tu tiempo empieza puntual.',
+    'faq.3.q': '¿Con qué frecuencia es recomendable repetir los tratamientos?',
+    'faq.3.a': 'Depende del tratamiento: los recorridos faciales son más eficaces en ciclos de 4-6 sesiones con cadencia semanal o quincenal, los tratamientos corporales en ciclos de cuatro sesiones, mientras que un masaje puede ser una cita única o un ritual mensual de mantenimiento.',
+    'faq.4.q': '¿Los productos utilizados son aptos para pieles sensibles?',
+    'faq.4.a': 'Sí. Seleccionamos formulaciones trazables, sin sustancias agresivas y probadas con rigor. Para pieles particularmente reactivas utilizamos líneas específicas y siempre realizamos una prueba de tolerabilidad antes del tratamiento.',
+    'faq.5.q': '¿Cómo puedo cancelar o reprogramar una cita?',
+    'faq.5.a': 'Basta con llamarnos o escribirnos al menos 24 horas antes: reprogramaremos la cita sin coste. Te pedimos amablemente que respetes este plazo, porque cada franja horaria está dedicada a una sola persona.',
+    'faq.6.q': '¿Es posible regalar un tratamiento?',
+    'faq.6.a': 'Por supuesto. Puedes regalar un tratamiento único o un vale de importe libre, válido doce meses. Contáctanos y prepararemos una tarjeta escrita a mano, lista para entregar.',
+    's.contatti.label': '07 — Contacto',
+    's.contatti.title': 'Escríbenos,<br>te responderemos <em>pronto</em>',
+    'contatti.dove': 'Dónde estamos',
+    'info.indirizzo.k': 'Dirección',
+    'info.indirizzo.v': 'Via della Spiga 42<br>20121 Milán (MI)',
+    'info.telefono.k': 'Teléfono',
+    'info.orari.k': 'Horario',
+    'info.orari.v': 'Lun – Vie · 09:30 – 20:00<br>Sábado · 10:00 – 18:00<br>Domingo · cerrado',
+    'info.metro.v': 'M1 San Babila · 6 min a pie<br>M3 Montenapoleone · 4 min a pie',
+    'map.aria': 'Mapa indicativo de la ubicación del atelier',
+    'map.span': 'Via della Spiga 42 · Milán',
+    'form.nome': 'Nombre y apellidos',
+    'form.nome.ph': 'Tu nombre',
+    'form.telefono': 'Teléfono',
+    'form.trattamento': 'Tratamiento',
+    'opt.1': 'Consulta personalizada',
+    'opt.2': 'Tratamiento facial',
+    'opt.3': 'Tratamiento corporal',
+    'opt.4': 'Masaje',
+    'opt.5': 'Depilación',
+    'form.messaggio': 'Mensaje',
+    'form.messaggio.ph': 'Cuéntanos qué buscas, estaremos encantados de aconsejarte.',
+    'form.note': 'Responderemos en 24 horas laborables.',
+    'form.submit': 'Enviar solicitud',
+    's.prenota.label': '08 — Reserva',
+    's.prenota.title': 'Tu momento<br>empieza <em>aquí</em>',
+    's.prenota.p': 'Reservar es sencillo. Elige el tratamiento, indica la franja horaria que prefieras y te confirmaremos la cita en pocas horas.',
+    'bs.1.h': 'Elige el tratamiento',
+    'bs.1.p': 'Consulta la sección de tratamientos e identifica el que mejor se adapta a ti. Si tienes dudas, selecciona “Consulta personalizada”.',
+    'bs.2.h': 'Indica tu disponibilidad',
+    'bs.2.p': 'Escríbenos el día y la franja horaria que prefieras. Te confirmaremos la cita según la disponibilidad real del atelier.',
+    'bs.3.h': 'Recibe la confirmación',
+    'bs.3.p': 'En 24 horas recibirás un mensaje con la fecha, la hora e indicaciones prácticas para llegar a Via della Spiga 42.',
+    'prenota.cta': 'Rellena el formulario',
+    'prenota.chiamaci': 'O llámanos',
+    'footer.about': 'Un atelier dedicado al cuidado de la persona, donde la belleza se construye con escucha, sustancia y tiempo.',
+    'footer.naviga': 'Navegar',
+    'footer.trattamenti': 'Tratamientos',
+    'footer.contatti': 'Contacto',
+    'footer.via': 'Via della Spiga 42, Milán',
+    'footer.copy': '© 2025 Atelier Serena · NIF 01234567890',
+  };
+
+  var DICTS = { en: I18N, es: I18N_ES };
+  var PAGE_LANG = document.documentElement.lang;
+  var LANG_URLS = {
+    it: 'https://sandrodream2.github.io/atelier-serena/',
+    en: 'https://sandrodream2.github.io/atelier-serena/en/',
+    es: 'https://sandrodream2.github.io/atelier-serena/es/'
+  };
   var LANG_KEY = 'atelier-lang';
   var langButtons = document.querySelectorAll('#langSwitch button');
 
   function applyLanguage(lang){
-    var isEn = (lang === 'en');
+    var D = DICTS[lang] || null;
     document.documentElement.lang = lang;
 
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var key = el.getAttribute('data-i18n');
-      if (isEn && I18N[key] !== undefined) el.innerHTML = I18N[key];
-      else if (!isEn) el.innerHTML = el.getAttribute('data-i18n-original') || el.innerHTML;
+      if (D && D[key] !== undefined) el.innerHTML = D[key];
+      else el.innerHTML = el.getAttribute('data-i18n-original') || el.innerHTML;
     });
 
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
       var key = el.getAttribute('data-i18n-aria');
-      if (isEn && I18N[key] !== undefined) el.setAttribute('aria-label', I18N[key]);
+      if (D && D[key] !== undefined) el.setAttribute('aria-label', D[key]);
+      else el.setAttribute('aria-label', el.getAttribute('data-aria-original') || el.getAttribute('aria-label'));
     });
 
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
       var key = el.getAttribute('data-i18n-placeholder');
-      if (isEn && I18N[key] !== undefined) el.setAttribute('placeholder', I18N[key]);
+      if (D && D[key] !== undefined) el.setAttribute('placeholder', D[key]);
+      else el.setAttribute('placeholder', el.getAttribute('data-ph-original') || el.getAttribute('placeholder'));
     });
 
     document.querySelectorAll('[data-i18n-alt]').forEach(function(el){
       var key = el.getAttribute('data-i18n-alt');
-      if (isEn && I18N[key] !== undefined) el.setAttribute('alt', I18N[key]);
+      if (D && D[key] !== undefined) el.setAttribute('alt', D[key]);
+      else el.setAttribute('alt', el.getAttribute('data-alt-original') || el.getAttribute('alt'));
     });
 
-    if (isEn && I18N['doc.title'] !== undefined) document.title = I18N['doc.title'];
+    if (D && D['doc.title'] !== undefined) document.title = D['doc.title'];
 
     langButtons.forEach(function(b){
       b.classList.toggle('active', b.getAttribute('data-lang') === lang);
@@ -2066,19 +2281,33 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     el.setAttribute('data-i18n-original', el.innerHTML);
   });
+  document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+    el.setAttribute('data-aria-original', el.getAttribute('aria-label'));
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+    el.setAttribute('data-ph-original', el.getAttribute('placeholder'));
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(function(el){
+    el.setAttribute('data-alt-original', el.getAttribute('alt'));
+  });
 
   langButtons.forEach(function(b){
     b.addEventListener('click', function(){
       var lang = b.getAttribute('data-lang');
       try { localStorage.setItem(LANG_KEY, lang); } catch(e){}
+      // On static language pages, switching language navigates to that page
+      if (PAGE_LANG !== 'it' && lang !== PAGE_LANG) {
+        window.location.href = LANG_URLS[lang];
+        return;
+      }
       applyLanguage(lang);
     });
   });
 
-  // Restore saved language (default: it)
+  // Restore saved language on the Italian page (default: it)
   var savedLang = 'en';
   try { savedLang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e){}
-  if (savedLang === 'en') applyLanguage('en');
+  if (PAGE_LANG === 'it' && savedLang !== 'it' && DICTS[savedLang]) applyLanguage(savedLang);
 
   var nav         = document.getElementById('nav');
   var burger      = document.getElementById('burger');
@@ -2278,9 +2507,12 @@ h3.display{ font-size:clamp(1.4rem,2.2vw,1.95rem); line-height:1.18; }
   if (form) {
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      formNote.textContent = (document.documentElement.lang === 'en')
-        ? 'Thank you! We will get back to you within 24 working hours.'
-        : 'Grazie! Ti ricontatteremo entro 24 ore lavorative.';
+      var okMsgs = {
+        en: 'Thank you! We will get back to you within 24 working hours.',
+        es: '¡Gracias! Te contactaremos dentro de 24 horas laborables.'
+      };
+      formNote.textContent = okMsgs[document.documentElement.lang] ||
+        'Grazie! Ti ricontatteremo entro 24 ore lavorative.';
       formNote.style.color = '#BFA37A';
       form.reset();
     });
